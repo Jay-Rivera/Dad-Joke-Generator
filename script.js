@@ -121,9 +121,30 @@ const dadJokeData = {
 // This function will return a random dad type for the joke
 const geRandomDadType = () => {
   const randomIndex = Math.floor(Math.random() * dadJokeData.dadType.length);
-  console.log(randomIndex);
 
   return dadJokeData.dadType[randomIndex];
 };
 
-console.log(geRandomDadType());
+// This function will return a random joke
+const geRandomDadJoke = () => {
+  const randomIndex = Math.floor(Math.random() * dadJokeData.joke.length);
+
+  return dadJokeData.joke[randomIndex];
+};
+
+// This function will return a random outcome for the joke
+const geRandomOutcome = () => {
+  const randomIndex = Math.floor(Math.random() * dadJokeData.outcome.length);
+
+  return dadJokeData.outcome[randomIndex];
+};
+
+const legendaryDadJoke = () => {
+  const dad = geRandomDadType();
+  const joke = geRandomDadJoke();
+  const outcome = geRandomOutcome();
+
+  return `${dad} said, "${joke}" ... ${outcome}`;
+};
+
+console.log(legendaryDadJoke());
